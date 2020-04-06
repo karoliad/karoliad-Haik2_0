@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 import java.security.Principal;
 import java.util.Collections;
 import java.util.Optional;
+import java.util.Set;
 
 
 @Controller
@@ -110,4 +111,20 @@ public class RideController {
 
         return "redirect:/myrides";
     }
+
+
+    @GetMapping("/passengerlist/{rideId}")
+    public String showPassengerList(Model model, @PathVariable Long rideId){
+        Optional<Ride> getRide = rideRepository.findById(rideId);
+        Set<User> getPassengers = getRide.get().getPassengers();
+        int seatsAvailable = rideRepository.findById(rideId).get().getSeatsavailable();
+
+        model.addAttribute("allPassengers", getPassengers);
+        model.addAttribute("rideId", rideRepository.findById(rideId).get().getRide_id());
+        model.addAttribute("seatsAvailable", seatsAvailable);
+
+        return "passengerlist";
+    }
+
+
 }

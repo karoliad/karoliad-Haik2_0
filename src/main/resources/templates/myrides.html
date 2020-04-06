@@ -23,6 +23,7 @@
                 <thead id="table-header-mylist" class="ride-table-header">
                 <div class="table-rows">
                     <tr>
+                        <th scope="row">Tur ID</th>
                         <th scope="row">Sjåfør</th>
                         <th scope="row">Dato</th>
                         <th scope="row">Avreisetid</th>
@@ -36,6 +37,7 @@
                 <tbody>
                 <div>
                     <tr class="ride-table-container" th:each="ride : ${myrides}">
+                        <td th:text="${ride.getRide_id()}"></td>
                         <td th:text="${ride.getDriver().firstName}"></td>
                         <td th:text="${ride.getStartDate()}"></td>
                         <td th:text="${ride.getStarttime()}"></td>
@@ -58,6 +60,7 @@
                 <thead id="table-header-mydrives" class="ride-table-header">
                 <div class="table-rows">
                     <tr>
+                        <th scope="row">Tur ID</th>
                         <th scope="row">Dato</th>
                         <th scope="row">Avreisetid</th>
                         <th scope="row">Møteplass</th>
@@ -71,13 +74,14 @@
                 <tbody>
                 <div>
                     <tr class="ride-table-container" th:each="ride : ${driverRides}">
+                        <td th:text="${ride.getRide_id()}"></td>
                         <td th:text="${ride.getStartDate()}"></td>
                         <td th:text="${ride.getStarttime()}"></td>
                         <td th:text="${ride.getStartlocation()}"></td>
                         <td th:text="${ride.getDestination()}"></td>
                         <td th:text="${ride.getComments()}"></td>
                         <td th:text="${ride.getSeatsavailable()}"></td>
-                        <td><a href="https://www.youtube.com/watch?v=LPwHVpcARXc" class="minibtn">Passasjerer</a></td>
+                        <td><a th:href="@{/passengerlist/{id}(id=${ride.ride_id})}" class="minibtn">Passasjerer</a></td>
                     </tr>
                 </div>
                 </tbody>

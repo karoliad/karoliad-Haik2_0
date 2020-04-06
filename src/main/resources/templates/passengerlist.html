@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="style.css"/>
-        <title>PassasjerListe || Ha!k</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Passasjerer || Ha!k</title>
+</head>
     <div class="header">
         <header>
             <h1><a href="/">Ha!k</a></h1>
         </header>
     </div>
     <body>
+
+        <h4 th:text="'Tur ID: ' + ${rideId}"></h4>
+        <h4 th:text="'Antall passasjerer: ' + ${allPassengers.size()}"></h4>
+        <h4 th:text="'Ledige plasser: ' + ${seatsAvailable}"></h4>
         <div th:if ="${not #lists.isEmpty(allPassengers)}">
             <table class="table table-striped">
                 <thead id="table-header-allPassengers" class="ride-table-header">
-<!--                <div class="table-rows">-->
-<!--                    <h2>Passasjerer</h2>-->
-<!--                    <tr>-->
-<!--                        <th scope="row">Navn</th>-->
-<!--                        <th scope="row">Telefonnummer</th>-->
-<!--                    </tr>-->
-<!--                </div>-->
-<!--                </thead>-->
-<!--                <tbody>-->
-<!--                <div class="ride-table-container">-->
-<!--                    <tr th:each="passenger : ${allPassengers}">-->
-<!--                        <td th:text="${passenger.getFirstName()}"></td>-->
-<!--                        <td th:text="${passenger.getPhone_number()}"></td>-->
-
-<!--                    </tr>-->
-<!--                </div>-->
-<!--                </tbody>-->
+                <div class="table-rows">
+                    <h2>Passasjerer</h2>
+                    <tr>
+                        <th scope="row">Navn</th>
+                        <th scope="row">Telefonnummer</th>
+                    </tr>
+                </div>
+                </thead>
+                <tbody>
+                <div class="ride-table-container">
+                    <tr th:each="passenger : ${allPassengers}">
+                        <td th:text="${passenger.firstName}"></td>
+                        <td th:text="${passenger.phone_number}"></td>
+                    </tr>
+                </div>
+                </tbody>
             </table>
+            <div class="form-inline-buttons">
+                <a href="/rides" class="medium-btn">Alle Ha!ks</a>
+                <a href="/choosestatus" class="medium-btn">Meny</a>
+                <a href="/createride" class="medium-btn">Ny Ha!k</a>
+                <a class="medium-btn">Profil</a>
+                <a href="/" class="medium-btn" id="logout-btn"> Logg ut </a>
+            </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
