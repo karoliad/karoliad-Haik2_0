@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Menu || Ha!k</title>
+</head>
+<div class="header">
+    <header>
+        <h1><a href="/">Ha!k</a></h1>
+    </header>
+</div>
+<body class="haik-image6">
+<!-- <img src="images/haik2.jpg" alt="image of remote road">  -->
+<div class="container">
+    <div id="choosestatus">
+        <div th:object="${user}">
+            <h2>Velkommen</h2>
+            <h2 th:text="*{firstName}"></h2>
+            <div class="buttons">
+                <a href="/rides" class="btn" id="rides-btn">Se tilgjenglige Ha!ks</a>
+                <a href="/myrides" class="btn" id="my-rides-btn">Vis mine Ha!ks</a>
+                <a href="/createride" id="driver-btn" class="btn">Opprett ny Ha!k</a>
+                <a class="btn" id="my-rides-btn">Profil</a>
+                <a href="/" class="btn" id="logout-btn"> Logg ut </a>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

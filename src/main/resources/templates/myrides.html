@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Mine || Ha!k</title>
+</head>
+<div class="header">
+    <header>
+        <h1><a href="/">Ha!k</a></h1>
+    </header>
+</div>
+<body class="haik-image4">
+<div class="form-list-control">
+    <div class="ride-container-two" id="ride-container-two">
+        <h2>Mine Ha!ks</h2>
+        <div>
+            <table class="table table-striped">
+                <thead id="table-header-mylist" class="ride-table-header">
+                <div class="table-rows">
+                    <tr>
+                        <th scope="row">Sjåfør</th>
+                        <th scope="row">Dato</th>
+                        <th scope="row">Avreisetid</th>
+                        <th scope="row">Møteplass</th>
+                        <th scope="row">Destinasjon</th>
+                        <th scope="row">Beskrivelse</th>
+                        <th scope="row">Kontakt sjåfør</th>
+                    </tr>
+                </div>
+                </thead>
+                <tbody>
+                <div>
+                    <tr class="ride-table-container" th:each="ride : ${myrides}">
+                        <td th:text="${ride.getDriver().firstName}"></td>
+                        <td th:text="${ride.getStartDate()}"></td>
+                        <td th:text="${ride.getStarttime()}"></td>
+                        <td th:text="${ride.getStartlocation()}"></td>
+                        <td th:text="${ride.getDestination()}"></td>
+                        <td th:text="${ride.getComments()}"></td>
+                        <td th:text="${ride.getDriver().getPhone_number()}"></td>
+                    </tr>
+                </div>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="form-list-control">
+    <div class="ride-container-two" id="ride-container-two-driver">
+        <div th:if="${not #lists.isEmpty(driverRides)}">
+            <h2>Mine sjåfør-Ha!ks</h2>
+            <table class="table table-striped">
+                <thead id="table-header-mydrives" class="ride-table-header">
+                <div class="table-rows">
+                    <tr>
+                        <th scope="row">Dato</th>
+                        <th scope="row">Avreisetid</th>
+                        <th scope="row">Møteplass</th>
+                        <th scope="row">Destinasjon</th>
+                        <th scope="row">Beskrivelse</th>
+                        <th scope="row">Ledige seter</th>
+                        <th scope="row">Passasjerer</th>
+                    </tr>
+                </div>
+                </thead>
+                <tbody>
+                <div>
+                    <tr class="ride-table-container" th:each="ride : ${driverRides}">
+                        <td th:text="${ride.getStartDate()}"></td>
+                        <td th:text="${ride.getStarttime()}"></td>
+                        <td th:text="${ride.getStartlocation()}"></td>
+                        <td th:text="${ride.getDestination()}"></td>
+                        <td th:text="${ride.getComments()}"></td>
+                        <td th:text="${ride.getSeatsavailable()}"></td>
+                        <td><a href="https://www.youtube.com/watch?v=LPwHVpcARXc" class="minibtn">Passasjerer</a></td>
+                    </tr>
+                </div>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-inline-buttons">
+            <a href="/rides" class="medium-btn">Alle Ha!ks</a>
+            <a href="/choosestatus" class="medium-btn">Meny</a>
+            <a href="/createride" class="medium-btn">Ny Ha!k</a>
+            <a class="medium-btn">Profil</a>
+            <a href="/" class="medium-btn" id="logout-btn"> Logg ut </a>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>

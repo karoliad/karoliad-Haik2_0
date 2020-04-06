@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Logg Inn || Ha!k</title>
+</head>
+
+
+<div class="header">
+    <header>
+        <h1><a href="/">Ha!k</a></h1>
+    </header>
+</div>
+<body class="haik-image">
+<div class="container">
+
+    <div th:if="${param.logout}">
+        You have been logged out.
+    </div>
+</div>
+<div class="container">
+    <form th:action="@{/login}" id="login-form" method="post">
+        <div>
+            <h2>Logg Inn</h2>
+            <div id="invalid-input" th:if="${param.error}">
+                Ugyldig brukernavn og/eller passord.
+            </div>
+            <div><label> Brukernavn : <input type="email" name="email" placeholder="epost"/></label></div>
+            <div><label> Passord: <input type="password" name="password" placeholder="*****"/></label></div>
+        </div>
+        <div><input type="submit" value="Logg inn" class="btn" id="login-btn"/></div>
+        <a href="/register"  class="btn">Registrer ny bruker</a>
+    </form>
+</div>
+</body>
+
+</html>

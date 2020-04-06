@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="ride-container-two" id="ride-container-driver">
+    <h2>Mine sjåfør-Ha!ks</h2>
+    <div th:if="${not #lists.isEmpty(driverRides)}">
+        <table class="table table-striped">
+            <thead id="table-header-mydrives" class="ride-table-header">
+            <div class="table-rows">
+                <tr>
+                    <th scope="row">Dato</th>
+                    <th scope="row">Avreisetid</th>
+                    <th scope="row">Møteplass</th>
+                    <th scope="row">Destinasjon</th>
+                    <th scope="row">Beskrivelse</th>
+                    <th scope="row">Ledige seter</th>
+                    <th scope="row">Passasjerer</th>
+                </tr>
+            </div>
+            </thead>
+            <tbody>
+            <div>
+                <tr class="ride-table-container" th:each="ride : ${driverRides}">
+                    <td th:text="${ride.getStartDate()}"></td>
+                    <td th:text="${ride.getStarttime()}"></td>
+                    <td th:text="${ride.getStartlocation()}"></td>
+                    <td th:text="${ride.getDestination()}"></td>
+                    <td th:text="${ride.getComments()}"></td>
+                    <td th:text="${ride.getSeatsavailable()}"></td>
+                    <!-- Passasjer- knappen funker ikke enda-->
+                    <!--                            <td><<a th:href="/passengerlist" class="minibtn">Passasjerer</a></td>-->
+                </tr>
+            </div>
+            </tbody>
+        </table>
+    </div>
+    <div class="all-ride-container">
+        <a href="/rides" class="minibtn">Alle turer</a>
+        <a href="/choosestatus" class="minibtn">Meny</a>
+        <a href="/" class="minibtn">Profil</a>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

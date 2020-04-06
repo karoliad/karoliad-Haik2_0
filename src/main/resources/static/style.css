@@ -1,0 +1,587 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*height: 100%;*/
+}
+body {
+    font-family: canada-type-gibson, sans-serif, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #fff;
+}
+
+
+.table{
+
+    color:#fff;
+}
+.haik-image {
+    background-image: url("images/haik2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.haik-image2 {
+    background-image: url("images/fall_road-unsplash.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.haik-image3 {
+    background-image: url("images/snowey_road_unsplash.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.haik-image4 {
+    background-image: url("images/mountain-road-unsplash.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.haik-image5 {
+    background-image: url("images/remote_road-unsplash.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.haik-image6 {
+    background-image: url("images/hands-on-unsplash.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.haik-image7 {
+    background-image: url("images/carmirror-unsplash.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.haik-image8 {
+    background-image: url("images/green-landscape-unsplash.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.header {
+    color: white;
+    background-image: linear-gradient(#2A2E43, #08090D);
+    width: 100%;
+    height: 100px;
+    padding: 20px 10px;
+    text-align: start;
+    font-size: 34px;
+    margin-bottom: 5%;
+}
+
+.header a{
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-family: canada-type-gibson, sans-serif;
+}
+
+h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-family: canada-type-gibson, sans-serif;
+}
+
+
+h3 {
+    color: #181B27;
+    font-family: canada-type-gibson, sans-serif;
+    font-weight: 600;
+}
+
+
+h4 {
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    font-family: canada-type-gibson, sans-serif;
+}
+
+p {
+    color: #fff;
+    font-family: canada-type-gibson, sans-serif;
+    font-size: larger;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#invalid-input{
+    color: firebrick;
+    font-size: 18px;
+    text-align: center;
+    text-transform: capitalize;
+}
+#intro{
+    font-size: 18px;
+    text-align: center;
+}
+
+
+.container {
+    margin: auto;
+    width: 500px;
+    height: auto;
+    padding: 1rem;
+    overflow: auto;
+}
+
+
+.ride-container {
+    margin: auto;
+    width: 500px;
+    height: auto;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.ride-container-two{
+    margin: auto;
+    padding: 1rem;
+
+}
+.form-inline-buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    font-size: larger;
+    background-image: linear-gradient(#A1CBD5, #384446);
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.btn:hover {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    /* text-shadow: 1px 3px 5px rgba(255, 255, 255, 0.509); */
+    background-image: linear-gradient(#BFA18F, #605148);
+}
+
+
+.medium-btn {
+    display: inline-block;
+    width: 18%;
+    padding: 10px 15px;
+    border: 0;
+    font-size: large;
+    background-image: linear-gradient(#A1CBD5, #384446);
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-decoration: none;
+    text-align: center;
+}
+medium-btn a{
+    color: white;
+    text-decoration: none;
+}
+.medium-btn:hover {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    /* text-shadow: 1px 3px 5px rgba(255, 255, 255, 0.509); */
+    background-image: linear-gradient(#BFA18F, #605148);
+}
+
+.smallbtn {
+    padding: 10px 15px;
+    border: 0;
+    font-size: large;
+    background-image: linear-gradient(#A1CBD5, #384446);
+    color: #fff;
+    border-radius: 10px;
+    margin: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.smallbtn:hover {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    /* text-shadow: 1px 3px 5px rgba(255, 255, 255, 0.509); */
+    background-image: linear-gradient(#BFA18F, #605148);
+}
+
+.minibtn {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 7px;
+    border: 0;
+    font-size: small;
+    background-image: linear-gradient(#A1CBD5, #384446);
+    color: #fff;
+    border-radius: 10px;
+    margin: 5px 0;
+    text-decoration: none;
+    text-align: center;
+}
+
+.minibtn:hover {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    /* text-shadow: 1px 3px 5px rgba(255, 255, 255, 0.509); */
+    background-image: linear-gradient(#BFA18F, #605148);
+}
+
+#my-form {
+
+    width: 100%;
+    height: auto;
+    color: #1a202c;
+    padding: 2rem;
+    background: rgba(130, 159, 163, 0.95);
+    border-radius: 10px;
+
+}
+
+
+#my-form label {
+    display: block;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: italic;
+    color: #1a202c;
+    padding: 10px 0;
+}
+
+
+#my-form input {
+    width: 100%;
+    padding: 8px;
+    font-size: 24px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #829fa3;
+}
+
+
+#login-form {
+    width: 100%;
+    height: auto;
+    color: #1a202c;
+    padding: 2rem;
+    background: rgba(130, 159, 163, 0.95);
+    border-radius: 10px;
+
+}
+
+
+#login-form label {
+    display: block;
+    font-size: 24px;
+    color: #1a202c;
+    font-weight: 500;
+    padding: 10px 0;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 8px;
+    font-size: 24px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #829fa3;
+}
+
+#welcome-form {
+
+    height: auto;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(130, 159, 163, 0.95);
+    border-radius: 10px;
+}
+
+#welcome-form label {
+    display: block;
+    font-size: 24px;
+    color: #1a202c;
+    font-weight: 500;
+    padding: 10px 0;
+}
+
+#welcome-form input {
+    width: 100%;
+    padding: 8px;
+    font-size: 24px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #829fa3;
+}
+
+#choosestatus {
+
+    height: auto;
+    margin: 10%;
+    padding: 2rem;
+    background: rgba(130, 159, 163, 0.95);
+    border-radius: 20px;
+
+}
+
+#choosestatus label {
+    display: block;
+    font-size: 24px;
+    color: #1a202c;
+    font-weight: 500;
+    padding: 20px 0;
+}
+
+#choosestatus h2 {
+    color: white;
+    text-align: center;
+    font-size: 34px;
+}
+
+.all-ride-container{
+    margin: auto;
+    height: auto;
+    padding: 2rem;
+    overflow: auto;
+}
+
+
+#all-rides-container {
+
+    height: auto;
+    color: #1a202c;
+    margin: 5%;
+    padding:  2rem;
+    background: rgba(130, 159, 163, 0.95);
+    border-radius: 10px;
+
+}
+
+#all-rides-container .smallbtn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-content: center;
+    width: 30px;
+    padding: 10px;
+}
+
+#all-rides-container h2 {
+    text-align: center;
+    font-weight: 500;
+    color: white;
+}
+
+#ride-container {
+    height: auto;
+    color: #1a202c;
+    padding: 2rem;
+    background: rgba(130, 159, 163, 0.95);
+    border-radius: 10px;
+
+}
+
+#ride-container label {
+    display: block;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: italic;
+    color: #1a202c;
+    padding: 10px 0;
+}
+
+#ride-container input {
+    width: 100%;
+    padding: 8px;
+    font-size: 24px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #829fa3;
+}
+#ride-container-two {
+    height: auto;
+    color: #1a202c;
+    padding: 2rem;
+    background: rgba(130, 159, 163, 0.95);
+    border-radius: 10px;
+    margin: 0 5%;
+    width: -moz-fit-content;
+}
+
+#ride-container-two h2 {
+    text-align: center;
+    font-weight: 500;
+    color: white;
+}
+
+#ride-container-two-driver h2 {
+    text-align: center;
+    font-weight: 500;
+    color: white;
+}
+
+#ride-container-two-driver {
+    height: auto;
+    color: #1a202c;
+    padding: 2rem;
+    background: rgba(130, 159, 163, 0.95);
+    border-radius: 10px;
+    margin: 0 5%;
+    width: -moz-fit-content;
+}
+
+#ride-table-header {
+    color: #fff;
+    font-size: 1em;
+    padding-left: 20px;
+}
+
+.name_input{
+
+    height: auto;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(130, 159, 163, 0.95);
+    border-radius: 10px;
+}
+
+#table-header{
+    font-size: larger;
+    font-weight: bolder;
+    color: #ffffff;
+}
+
+.ride-table-columns {
+    color: #fff;
+    font-size: 1em;
+    padding-left: 20px;
+
+}
+
+.seats{
+    font-weight: bold;
+    font-size: larger;
+    font-stretch: normal;
+    padding-left: 10px;
+
+}
+#confirmride {
+    position: absolute;
+    height: auto;
+    margin-left: 37%;
+    margin-top: 8rem;
+    padding: 2rem;
+    background: rgba(130, 159, 163, 0.95);
+    border-radius: 20px;
+}
+
+#confirmride h1 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+
+/*
+img {
+    width: 100%;
+    height: auto;
+
+}
+*/
+
+
+
+/* HAIK COLOR PLALETTE
+Label
+font-family: canada-type-gibson, sans-serif;
+font-style: normal;
+font-weight: 400;
+
+font-family: canada-type-gibson, sans-serif;
+font-style: normal;
+font-weight: 600;
+
+Lyseste fargenyanser
+Lyseste grå: #BBBCCD
+Lysteste babyblå: #CEE4F2
+Lys beige: #d9c3a9
+
+Lyse fargetoner
+Lys blå/grå:  #7b95a6
+#829fa3
+Grå beige (buttons mm): #bfa18f
+Varmere beigebrun: #d9c3a9
+
+Mellomfarger
+Grå/ tyrkis bakgrunnsfarge forms: #587e8c
+grå/ blå mellomfarge (buttons/Forms) : #4d748c
+varm brun : #bf826b
+Grå : #707070
+Lys grønn/grå:  #70878C
+
+Mørke blåtoner
+Mørk Gråblå (kan brukes på bakgrunn): #454F63
+Navy: #2a2e43
+Mørkeste blå (Header og overskrifter) : #1a202c
+( Mørkblåsort: #181B27 )
+
+Linear Gradient
+Varm beige: #2A2E43, #08090D
+Gråbeige: #BFA18F, #605148
+Grå Tyrkis: #A1CBD5, #384446
+Blå/Navy: #3A3F5C, #08090D
+Mørkblå: linear-gradient(#2A2E43, #08090D)
+*/
