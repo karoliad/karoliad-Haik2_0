@@ -70,6 +70,6 @@ public class UserController {
     public String chooseStatus(Model model, Principal principal) {
         String email = principal.getName();
         model.addAttribute("user", userRepository.findByEmail(email));
-        return "chooseStatus";
+        return "choosestatus";
     }
 }

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.sql.DataSource;
 import java.security.Principal;
-import java.util.Collections;
 import java.util.Optional;
 import java.util.Set;
 
@@ -78,7 +77,7 @@ public class RideController {
     public String confirmRide(Model model, Principal principal, @PathVariable Long rideId) {
         Optional<Ride> optionalRide = rideRepository.findById(rideId);
         String email = principal.getName();
-       User newPassenger = userRepository.findByEmail(email);
+        User newPassenger = userRepository.findByEmail(email);
 
         Ride ride = null;
         if (optionalRide.isPresent()) {
@@ -113,17 +112,31 @@ public class RideController {
     }
 
 
+    //  Metode for å vise alle passasjerer tilknyttet en Ha!k
+    //  Henter rideId fra myRides for å sikre at passasjerlisten knyttes opp mot korrekt tur
+
+    //  Legg inn sjekk så det kun er isDriver som kan få opp passasjerlisten
+    // burde denne logikken ligge i service?
+
     @GetMapping("/passengerlist/{rideId}")
-    public String showPassengerList(Model model, @PathVariable Long rideId){
-        Optional<Ride> getRide = rideRepository.findById(rideId);
-        Set<User> getPassengers = getRide.get().getPassengers();
-        int seatsAvailable = rideRepository.findById(rideId).get().getSeatsavailable();
+    public String showPassengerList(Model model, @PathVariable Long rideId, Principal principal) {
+        String loggedInUser = principal.getName();
+        String driver = rideRepository.findById(rideId).get().getDriver().getEmail();
+        boolean loggedIsUserIsDriver = loggedInUser.equals(driver);
 
-        model.addAttribute("allPassengers", getPassengers);
-        model.addAttribute("rideId", rideRepository.findById(rideId).get().getRide_id());
-        model.addAttribute("seatsAvailable", seatsAvailable);
+        if (loggedIsUserIsDriver) {
+            Optional<Ride> optionalRide = rideRepository.findById(rideId);
+            Set<User> getPassengers = optionalRide.get().getPassengers();
+            int seatsAvailable = rideRepository.findById(rideId).get().getSeatsavailable();
 
-        return "passengerlist";
+            model.addAttribute("allPassengers", getPassengers);
+            model.addAttribute("rideId", rideRepository.findById(rideId).get().getRide_id());
+            model.addAttribute("seatsAvailable", seatsAvailable);
+
+            return "passengerlist";
+        } else {
+            return "error";
+        }
     }
 
 
